@@ -2,19 +2,21 @@ package com.proptiger.drip.input;
 
 import java.util.List;
 
-public class Trigger {
+public class CampaignNode {
+
+    private Selector selector;
 
     public enum Type {
-        SENT, OPENED, CLICKED;
+        INITIAL, SENT, OPENED, CLICKED, CUSTOM;
     }
 
-    private Type          type;
+    private Type               type;
 
-    private String        template;
+    private String             template;
 
-    private Schedule      schedule;
+    private Schedule           schedule;
 
-    private List<Trigger> triggers;
+    private List<CampaignNode> actions;
 
     public Type getType() {
         return type;
@@ -40,11 +42,4 @@ public class Trigger {
         this.schedule = schedule;
     }
 
-    public List<Trigger> getTriggers() {
-        return triggers;
-    }
-
-    public void setTriggers(List<Trigger> triggers) {
-        this.triggers = triggers;
-    }
 }

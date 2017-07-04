@@ -1,6 +1,6 @@
 package com.proptiger.drip.service;
 
-public interface JobExecutor {
+public interface JobExecutorService {
 
     void startExecuting();
 }
